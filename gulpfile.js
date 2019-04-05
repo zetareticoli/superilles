@@ -6,6 +6,7 @@ var bs = require('browser-sync');
 var clean = require('gulp-clean');
 var nunj = require('gulp-nunjucks-render');
 var sass = require('gulp-sass');
+var reload = bs.reload;
 
 var root = './';
 var dest = './app';
