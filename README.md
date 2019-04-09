@@ -18,7 +18,7 @@ The grid is composed of a predetermined number of superblocks. The size of each 
 | @xxl 1440px | 12  | 24 | 96 |
 
 <img src="https://github.com/zetareticoli/superilles/blob/master/assets/images/superilles-grid@xl.png?raw=true" alt="Superilles Grid">
-<p align="center" style="font-size: 75%">Example of Grid and Superblocks designed for XL Devices (1200px +)</p>
+<p style="font-size: 75%">Example of Grid and Superblocks designed for XL Devices (1200px +)</p>
 
 ### Templates
 On the basis of this grid I have designed several grid templates defining specific areas based on the use being made.
