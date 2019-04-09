@@ -30,8 +30,8 @@ img {
 
 .page {
   display: grid;
-  padding: 12px;
-  grid-gap: $gap-lg;
+  // padding: 12px;
+  grid-gap: $gap-sm;
   grid-template-areas:
     "header"
     "content"
@@ -40,7 +40,7 @@ img {
   justify-items: center;
 
   @media screen and (min-width: $bp-lg) {
-    padding: 16px;
+    grid-gap: $gap-lg;
   }
 }
 
