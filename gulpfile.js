@@ -21,7 +21,7 @@ var css = {
 var pages = {
   source: './pages/**/*.njk',
   out: dest,
-  watch: './pages/**/*.njk'
+  watch: './**/*.njk'
 };
 
 // Task: Clean build files
@@ -44,7 +44,7 @@ gulp.task('nunj', function () {
   };
   return gulp.src(pages.source)
     .pipe(nunj({
-      path: [root]
+      path: ['templates']
     }))
     .pipe(gulp.dest(dest))
 });
@@ -61,7 +61,8 @@ gulp.task('sass', function () {
 gulp.task('serve', function () {
   bs.init({
     server: {
-      baseDir: dest
+      baseDir: root,
+      index: "./app/index.html"
     }
   });
   gulp.watch(pages.watch, gulp.series('nunj')).on('change', reload);
