@@ -1,7 +1,5 @@
 # Superilles Grid System
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
-
 Superilles is a grid system specifically designed for editorial websites (newspapers, media, magazines, etc). It uses CSS Grid Layout Module.
 
 ## Why Superilles
