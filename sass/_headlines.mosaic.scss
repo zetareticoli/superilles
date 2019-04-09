@@ -1,0 +1,19 @@
+.g-headlines--mosaic {
+
+  @media screen and (min-width: $bp-xl) {
+    grid-template-rows: repeat(5, minmax(176px, auto));
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    grid-template-columns: repeat(12, 96px);
+    grid-template-rows: repeat(7, minmax(96px, auto));
+    grid-template-areas:
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "standfirst standfirst standfirst adv adv adv featured featured featured featured strip strip"
+      "standfirst standfirst standfirst adv adv adv featured featured featured featured strip strip"
+      "standfirst standfirst standfirst adv adv adv featured featured featured featured strip strip";
+  }
+}

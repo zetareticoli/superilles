@@ -1,0 +1,29 @@
+.g-headlines--medium {
+
+  @media screen and (min-width: $bp-md) {
+    grid-template-rows: repeat(8, minmax(114px, auto));
+    grid-template-areas:
+      "lead lead lead lead lead lead"
+      "lead lead lead lead lead lead"
+      "lead lead lead lead lead lead"
+      "featured featured featured featured-2 featured-2 featured-2"
+      "featured featured featured featured-2 featured-2 featured-2"
+      "featured featured featured featured-2 featured-2 featured-2"
+      "standfirst standfirst standfirst standfirst adv adv"
+      "standfirst standfirst standfirst standfirst adv adv";
+  }
+
+  @media screen and (min-width: $bp-lg) {
+    grid-template-rows: repeat(5, minmax(152px, auto));
+    grid-template-areas:
+      "lead lead lead lead strip strip"
+      "lead lead lead lead strip strip"
+      "featured featured featured-2 featured-2 strip strip"
+      "featured featured featured-2 featured-2 adv adv"
+      "standfirst standfirst standfirst standfirst adv adv";
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    grid-template-rows: repeat(5, minmax(176px, auto));
+  }
+}
