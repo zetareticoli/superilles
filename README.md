@@ -9,6 +9,9 @@ Grid design is heavily inspired by Barcelona's _superilles_. A _superilla_ (supe
 The grid is composed of a predetermined number of superblocks. The size of each superblock is predetermined and changes according to the viewport. So we would have superblocks of different sizes based on the devices used. 
 
 ### Dettagli
+
+<img src="https://ad.citynews.it/frontend/superilles/superilles-grid@xl.png" style="width: 50%">
+
 | Breakpoints | Colonne  | Grid Gap (px)  | Superblocks (px) | 
 |---|---|---|---|
 | @md 740px | 6  | 12 | 114 |
