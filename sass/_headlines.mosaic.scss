@@ -1,5 +1,19 @@
 .g-headlines--mosaic {
 
+  @media screen and (min-width: $bp-md) {
+    grid-template-rows: repeat(5, minmax(152px, auto));
+    grid-template-areas:
+      "lead lead lead lead featured featured"
+      "lead lead lead lead featured featured"
+      "standfirst standfirst standfirst adv adv adv"
+      "standfirst standfirst standfirst adv adv adv"
+      "strip strip strip strip strip strip";
+  }
+
+  @media screen and (min-width: $bp-lg) {
+    grid-template-rows: repeat(5, minmax(152px, auto));
+  }
+
   @media screen and (min-width: $bp-xl) {
     grid-template-rows: repeat(5, minmax(176px, auto));
   }
