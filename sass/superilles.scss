@@ -66,10 +66,6 @@ img {
   grid-area: content;
   width: 100%;
   position: relative;
-  z-index: 1;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
 
   @media screen and (min-width: $bp-xl) {
     width: 1176px;
