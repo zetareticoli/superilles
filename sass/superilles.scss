@@ -3,8 +3,9 @@ $gap-lg: 24px;
 
 
 $bp-md: 740px;
-$bp-lg: 992px;
+$bp-lg: 1200px;
 $bp-xl: 1366px;
+$bp-xxl: 1440px;
 
 
 * {
@@ -22,6 +23,11 @@ body {
   font: 100% Helvetica, Arial, sans-serif;
 }
 
+img {
+  min-width: 100%;
+  width: 100%;
+}
+
 .page {
   display: grid;
   padding: 12px;
@@ -32,9 +38,13 @@ body {
     "footer";
   grid-template-rows: 80px 1fr 80px;
   justify-items: center;
+
+  @media screen and (min-width: $bp-lg) {
+    padding: 16px;
+  }
 }
 
-header {
+.header {
   grid-area: header;
   display: flex;
   align-items: center;
@@ -43,7 +53,7 @@ header {
   background-color: lightgray;
 }
 
-footer {
+.footer {
   grid-area: footer;
   display: flex;
   align-items: center;
@@ -52,7 +62,7 @@ footer {
   background-color: lightgray;
 }
 
-main {
+.main {
   grid-area: content;
   width: 100%;
   position: relative;
@@ -61,27 +71,37 @@ main {
   background-position: center top;
   background-size: cover;
 
-  @media screen and (min-width: $bp-lg) {
-    width: 1032px;
-  }
-
   @media screen and (min-width: $bp-xl) {
     width: 1176px;
   }
+
+  @media screen and (min-width: $bp-xxl) {
+    width: 1392px;
+  }
 }
 
-.box {
-  border: 1px solid gray;
-  padding: 20px;
+.g-box {
+  padding: 1rem;
+  display: flex;
 }
 
 .g-section {
   display: grid;
-  grid-gap: $gap-lg;
+  grid-gap: $gap-sm;
   grid-template-rows: auto;
+  transition: all .3s ease;
 
   @media screen and (min-width: $bp-md) {
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, minmax(auto, 114px));
+  }
+
+  @media screen and (min-width: $bp-lg) {
+    grid-gap: $gap-lg;
+    grid-template-columns: repeat(6, 152px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    grid-template-columns: repeat(6, 176px);
   }
 }
 
@@ -90,122 +110,143 @@ main {
 }
 
 // HEADLINE --------------------------------- /
-
-@media screen and (min-width: $bp-md) {
-  .g-section--headline {
-    grid-template-rows: repeat(2, 1fr);
+// Set Rows and Areas
+.g-headlines--base {
+  @media screen and (min-width: $bp-md) {
+    grid-template-rows: repeat(8, minmax(auto, 114px));
     grid-template-areas:
-      "hero hero hero hero aside aside"
-      "featured featured featured featured aside aside";
+      "hero hero hero hero hero hero"
+      "hero hero hero hero hero hero"
+      "hero hero hero hero hero hero"
+      "hero hero hero hero hero hero"
+      "featured featured featured featured featured featured"
+      "featured featured featured featured featured featured"
+      "module module module module adv adv"
+      "module module module module adv adv";
+    justify-content: center;
   }
 
-  .g-section--headline .box1 {
+  @media screen and (min-width: $bp-lg) {
+    grid-template-rows: repeat(5, 152px);
+    grid-template-areas:
+      "hero hero hero hero module module"
+      "hero hero hero hero module module"
+      "hero hero hero hero module module"
+      "featured featured featured featured adv adv"
+      "featured featured featured featured adv adv";
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    grid-template-rows: repeat(5, minmax(176px, auto));
+  }
+}
+
+// Grid Areas Assignment
+//
+@media screen and (min-width: $bp-md) {
+  .g-headlines--base .g-cover {
     grid-area: hero;
   }
 
-  .g-section--headline .box2 {
+  .g-headlines--base .g-featured {
     grid-area: featured;
-    grid-column: 1 / 3;
   }
 
-  .g-section--headline .box3 {
-    grid-area: featured;
-    grid-column: 3 / 5;
+  .g-headlines--base .g-module {
+    grid-area: module;
   }
 
-  .g-section--headline .box4 {
-    grid-area: aside;
-    grid-row: 2;
-  }
-
-  .g-section--headline .box5 {
-    grid-area: aside;
-    grid-row: 1;
+  .g-headlines--base .g-adv {
+    display: flex;
+    grid-area: adv;
+    align-items: center;
+    justify-content: center;
   }
 }
 
 // ASIDE --------------------------------- /
 
-@media screen and (min-width: $bp-md) {
-  .g-section--aside {
-    grid-template-rows: 6;
+.g-headlines--big {
+
+  @media screen and (min-width: $bp-xl) {
+    grid-template-rows: repeat(5, minmax(176px, auto));
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    grid-template-columns: repeat(12, 96px);
+    grid-template-rows: repeat(7, minmax(96px, auto));
     grid-template-areas:
-      "main main main main aside aside"
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "lead lead lead lead lead lead featured featured featured featured strip strip"
+      "standfirst standfirst standfirst adv adv adv featured featured featured featured strip strip"
+      "standfirst standfirst standfirst adv adv adv featured featured featured featured strip strip"
+      "standfirst standfirst standfirst adv adv adv featured featured featured featured strip strip";
   }
 
-  .g-section--aside .box1,
-  .g-section--aside .box2,
-  .g-section--aside .box3,
-  .g-section--aside .box4 {
-    grid-area: main;
+  .g-lead {
+    grid-area: lead;
   }
 
-  .g-section--aside .box5,
-  .g-section--aside .box6 {
-    grid-area: aside;
+  .g-featured {
+    grid-area: featured;
   }
 
-  .g-section--aside .box1 {
-    grid-row: 1;
+  .g-standfirst {
+    grid-area: standfirst;
   }
 
-  .g-section--aside .box2 {
-    grid-row: 2;
+  .g-strip {
+    grid-area: strip;
   }
 
-  .g-section--aside .box3 {
-    grid-row: 3;
-  }
-
-  .g-section--aside .box4 {
-    grid-row: 4;
-  }
-
-  .g-section--aside .box5 {
-    grid-row: 1 / 3;
-  }
-
-  .g-section--aside .box6 {
-    grid-row: 3 / 5;
+  .g-adv {
+    grid-area: adv;
   }
 }
 
-// FOCUS --------------------------------- /
+// // FOCUS --------------------------------- /
 
-.g-section--focus {
-  grid-template-areas:
-    "cover"
-    "featured-1"
-    "featured-2";
+// .g-section--focus {
+//   grid-template-areas:
+//     "cover"
+//     "featured-1"
+//     "featured-2"
+//     "featured-3";
 
-  @media screen and (min-width: $bp-md) {
-    grid-template-areas:
-      "cover cover cover featured-1 featured-1 featured-2"
-      "cover cover cover featured-1 featured-1 featured-2"
-  }
+//   @media screen and (min-width: $bp-md) {
+//     grid-template-rows: repeat(2, minmax(176px, auto));
+//     grid-template-areas:
+//       "cover cover cover featured-1 featured-2 featured-3"
+//       "cover cover cover featured-1 featured-2 featured-3"
+//   }
 
-  .box1 {
-    grid-area: cover;
-  }
+//   .g-cover {
+//     grid-area: cover;
+//   }
 
-  .box2 {
-    grid-area: featured-1;
-  }
+//   .box:nth-child(2) {
+//     grid-area: featured-1;
+//   }
 
-  .box3 {
-    grid-area: featured-2;
-  }
-}
+//   .box:nth-child(3) {
+//     grid-area: featured-2;
+//   }
 
+//   .box:nth-child(4) {
+//     grid-area: featured-3;
+//   }
+// }
 
-// FEATURED --------------------------------- /
+// // FEATURED --------------------------------- /
 
-@media screen and (min-width: $bp-md) {
-  .g-section--featured .box1 {
-    grid-column: 1 / 5;
-  }
+// @media screen and (min-width: $bp-md) {
+//   .g-section--featured .box1 {
+//     grid-column: 1 / 5;
+//   }
 
-  .g-section--featured .box2 {
-    grid-column: 5 / 7;
-  }
-}
+//   .g-section--featured .box2 {
+//     grid-column: 5 / 7;
+//   }
+// }
