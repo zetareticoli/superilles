@@ -27,9 +27,9 @@ Each template uses a predetermined number of lines. New templates will be develo
 
 ## Tech
 Superilles uses a number of open source projects to work properly:
-* [Nunjucks] - HTML enhanced for web apps!
-* [node.js] - evented I/O for the backend
-* [Gulp] - the streaming build system
+* [Nunjucks](https://mozilla.github.io/nunjucks/templating.html) - HTML enhanced for web apps!
+* [node.js](https://nodejs.org/)  - evented I/O for the backend
+* [Gulp](https://gulpjs.com)  - the streaming build system
 
 And of course Superilles itself is open source with a [public repository][dill]
  on GitHub.
