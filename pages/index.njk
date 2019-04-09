@@ -1,47 +1,7 @@
-{% extends "./templates/layout.njk" %}
+{% extends "layout.njk" %}
 
 {% block content %}
-  <div class="page">
 
-    <header>Header</header>
+  {% include "partials/headlines.base.njk" %}
 
-    <main>
-      
-
-      <section class="g-section g-section--headline">
-        <div class="box box1">Headline / Story Cover</div>
-        <div class="box box2">Headline / Story Featured</div>
-        <div class="box box3">Headline / Story Featured</div>
-        <div class="box box4">Headline / Box List</div>
-        <div class="box box5">Headline / Adv</div>
-      </section>
-
-      <section class="g-section g-section--featured">
-        <div class="box box1">Featured / Box Double</div>
-        <div class="box box2">Featured / Story Cover</div>
-      </section>
-
-
-      <section class="g-section g-section--aside">
-        <div class="box box1">Story Single</div>
-        <div class="box box2">Story Single</div>
-        <div class="box box3">Story Single</div>
-        <div class="box box4">Story Single</div>
-        <div class="box box5">Box List</div>
-        <div class="box box6">Adv</div>
-      </section>
-
-
-      <section class="g-section g-section--focus">
-        <div class="box box1">Story Cover</div>
-        <div class="box box2">Story Single</div>
-        <div class="box box3">Story Single</div>
-      </section>
-
-
-    </main>
-
-    <footer>Footer</footer>
-
-  </div>
 {% endblock %}

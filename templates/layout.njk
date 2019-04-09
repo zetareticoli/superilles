@@ -10,8 +10,17 @@
   <link rel="stylesheet" href="node_modules/material-colors/dist/colors.css">
 </head>
 <body>
-  {% block content %}
-    
-  {% endblock %}
+  <div class="page">
+
+    <header class="header">Header</header>
+
+    <main class="main">
+      {% block content %}
+        
+      {% endblock %}
+    </main>
+
+    <footer class="footer">Footer</footer>
+  </div>
 </body>
 </html>
