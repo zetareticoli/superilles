@@ -1,4 +1,5 @@
 <img src="https://github.com/zetareticoli/superilles/blob/master/assets/images/project-cover.jpg?raw=true" alt="Superilles Grid System" width="100%">
+
 # Superilles Grid System
 
 Superilles is a grid system specifically designed for editorial websites (newspapers, media, magazines, etc). It uses CSS Grid Layout Module.
