@@ -29,6 +29,7 @@ img {
 }
 
 .page {
+  height: 100%;
   display: grid;
   // padding: 12px;
   grid-gap: $gap-sm;
@@ -116,6 +117,14 @@ img {
     grid-area: lead;
   }
 
+  .g-main {
+    grid-area: main;
+  }
+
+  .g-aside {
+    grid-area: aside;
+  }
+
   .g-featured {
     grid-area: featured;
   }
@@ -126,6 +135,10 @@ img {
 
   .g-standfirst {
     grid-area: standfirst;
+  }
+
+  .g-standfirst-2 {
+    grid-area: standfirst-2;
   }
 
   .g-strip {
@@ -147,3 +160,7 @@ img {
 
 // Mosaic
 @import 'headlines.mosaic';
+
+// List ----------------------------------//
+//
+@import 'list';
