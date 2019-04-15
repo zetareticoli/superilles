@@ -149,3 +149,8 @@ img {
   @media screen and (min-width: 1200px) {
     .g-list {
       grid-template-areas: "main main main main aside aside"; } }
+
+.u-stories-col {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start; }
