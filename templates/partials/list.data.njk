@@ -1,0 +1,20 @@
+<section class="g-section g-list">
+
+  <section class="g-main u-stories-col">
+    {% for article in articles %}
+      {% set loopStart = loop.index %}
+      {% set loopSlice = 10 %}
+      {% if loopStart <= loopSlice %}
+        <article>
+          <img src="" alt="">
+          <h1>{{ article.title}}</h1>
+        </article>
+      {% endif %} 
+    {% endfor %}
+  </section>
+
+  <aside class="g-aside g-box bg-teal-200">
+    Aside
+  </aside>
+
+</section>
