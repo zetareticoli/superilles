@@ -1,28 +1,32 @@
 .g-headlines--base {
-  @media screen and (min-width: $bp-md) {
-    grid-template-rows: repeat(8, minmax(auto, 114px));
-    grid-template-areas:
-      "lead lead lead lead lead lead"
-      "lead lead lead lead lead lead"
-      "lead lead lead lead lead lead"
-      "lead lead lead lead lead lead"
-      "featured featured featured featured featured featured"
-      "featured featured featured featured featured featured"
-      "strip strip strip strip adv adv"
-      "strip strip strip strip adv adv";
+
+  article:nth-child(1) {
+    grid-column: span 6;
   }
 
-  @media screen and (min-width: $bp-lg) {
-    grid-template-rows: repeat(5, 152px);
-    grid-template-areas:
-      "lead lead lead lead strip strip"
-      "lead lead lead lead strip strip"
-      "lead lead lead lead strip strip"
-      "featured featured featured featured adv adv"
-      "featured featured featured featured adv adv";
+  article:nth-child(2),
+  article:nth-child(3) {
+    grid-column: span 2;
+    grid-row: span 2;
   }
 
-  @media screen and (min-width: $bp-xl) {
-    grid-template-rows: repeat(5, minmax(176px, auto));
+  article:nth-child(3),
+  article:nth-child(4) {
+    grid-column: span 2;
+  }
+
+  article:nth-child(n+5):nth-child(-n+10) {
+    grid-column: span 4;
+  }
+
+
+  [data-attribute="adv-box"] {
+    grid-row: 2;
+    grid-column: 5/7;
+  }
+
+  [data-attribute="focus-video"] {
+    grid-column: span 6;
+    grid-row: span 2;
   }
 }
