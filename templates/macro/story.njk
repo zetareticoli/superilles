@@ -1,0 +1,25 @@
+{% macro story(storyPosition, storyLayout, storySize, storyDate, storySummary, storySublinks, storyGallery, storyVideo) %}
+
+  <article data-position="{{ storyPosition }}" class="story story--{{ storyLayout }} story--{{ storySize }}">
+    <img src="{{ article.media }}" alt="">
+    <header>
+      <h1 class="type--{{ storySize }}">{{ article.title }}</h1>
+      {% if storySummary %}
+        <p class="story__summary">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+      {% endif %}
+    </header>
+    <footer>
+      {% if storySublinks %}
+        <ul>
+          <li><a href="">Sublink</a></li>
+          <li><a href="">Sublink</a></li>
+          <li><a href="">Sublink</a></li>
+        </ul>
+      {% endif %}
+      {% if storyDate %}
+        <span class="story__datestamp">Date</span>
+      {% endif %}
+    </footer>    
+  </article>
+
+{% endmacro %}
