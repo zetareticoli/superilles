@@ -1,3 +1,5 @@
+@import "../node_modules/material-colors/dist/colors.scss";
+
 $gap-sm: 12px;
 $gap-lg: 24px;
 
@@ -102,11 +104,11 @@ img {
 
   @media screen and (min-width: $bp-lg) {
     grid-gap: $gap-lg;
-    grid-template-columns: repeat(6, 152px);
+    grid-template-columns: repeat(12, 76px);
   }
 
   @media screen and (min-width: $bp-xl) {
-    grid-template-columns: repeat(6, 176px);
+    grid-template-columns: repeat(12, 96px);
   }
 }
 
@@ -114,61 +116,29 @@ img {
   margin-top: $gap-lg;
 }
 
-// Grid Areas Assignment
-//
-// @media screen and (min-width: $bp-md) {
-//   .g-lead {
-//     grid-area: lead;
-//   }
+// Typography ----------------------------------//
 
-//   .g-main {
-//     grid-area: main;
-//   }
+@import 'typography';
 
-//   .g-aside {
-//     grid-area: aside;
-//   }
-
-//   .g-featured {
-//     grid-area: featured;
-//   }
-
-//   .g-featured-2 {
-//     grid-area: featured-2;
-//   }
-
-//   .g-standfirst {
-//     grid-area: standfirst;
-//   }
-
-//   .g-standfirst-2 {
-//     grid-area: standfirst-2;
-//   }
-
-//   .g-strip {
-//     grid-area: strip;
-//   }
-
-//   .g-adv {
-//     grid-area: adv;
-//   }
-// }
 
 // Headlines ----------------------------------//
 //
-// Base
-@import 'headlines.base';
+@import 'featureds';
 
-
-// List ----------------------------------//
+// Adv ----------------------------------//
 //
-@import 'list';
+[grid-position="slot-1"] {
+  grid-row: 2;
+  grid-column: 5 / 7;
+}
 
+// Modules ----------------------------------//
+//
+[grid-position="column"] {
+  grid-row: 1;
+  grid-column: 5 / 7;
+}
 
-// Utilities ----------------------------------//
+// Story ----------------------------------//
 
-// .u-stories-col {
-//   display: flex;
-//   flex-flow: column;
-//   align-items: flex-start;
-// }
+@import 'story';

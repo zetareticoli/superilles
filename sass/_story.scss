@@ -1,0 +1,32 @@
+.story {
+  margin-bottom: 1rem;
+
+  &--list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__header {
+    .story--list & {
+      flex: 1 1 75%;
+    }
+  }
+
+  &__media {
+    .story--list & {
+      flex: 1 1 25%;
+    }
+  }
+
+  &__footer {
+    .story--list & {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__sublinks {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    list-style: none;
+  }
+}

@@ -3,20 +3,30 @@
 
 {% block content %}
 
-<section class="g-section g-headlines g-headlines--preview">
-  {{ story("lead", "cover", "lg", "datestamp", "summary", "sublinks") }}
+<section class="g-section g-featureds">
 
-  {{ story("featured", "stack", "md", "datestamp", "summary") }}
-
-  {{ story("featured", "stack", "md", "datestamp", "summary") }}
-</section>
-
-<section class="g-section g-list">
-
-  {% for i in range(0,5) %}
-    {{ story("featured", "list", "md", "datestamp", "summary", "sublinks") }}
+  {{ story("lead-spalla", "cover", "lg", false, articles[0].title, articles[0].summary) }}
+  {{ story("featured-top", "cover", "md", "1000x563", articles[10].title) }}
+  {{ story("featured-bottom", "stack", "sm", false, articles[2].title) }}
+  {{ story("featured-bottom", "stack", "sm", false, articles[3].title) }}
+  
+  {% set maxItems = 5 %}
+  {% for article in articles %}
+    {% if loop.index <= maxItems %}
+      {{ story("standfirst", "list", "md", "300x169", article.title, article.summary ) }}
+    {% endif %}
   {% endfor %}
 
+  {# <div grid-position="column">
+    <h3>Ultim'ora</h3>
+    {% for i in range(0,5) %}
+      {{ story("standfirst", "list", "sm", false,"datestamp") }}
+    {% endfor %}
+  </div> #}
+
+  {# <div grid-position="slot-1" class="slot">
+    <img src='https://placehold.it/300x250/616161?text=Medium%20Box' alt=''/>
+  </div> #}
 </section>
 
 {% endblock %}

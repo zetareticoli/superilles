@@ -1,25 +1,34 @@
-{% macro story(storyPosition, storyLayout, storySize, storyDate, storySummary, storySublinks, storyGallery, storyVideo) %}
+{% macro story(gridPosition, layout, size, mediaRes, heading, summary, datestamp) %}
 
-  <article data-position="{{ storyPosition }}" class="story story--{{ storyLayout }} story--{{ storySize }}">
-    <img src="{{ article.media }}" alt="">
-    <header>
-      <h1 class="type--{{ storySize }}">{{ article.title }}</h1>
-      {% if storySummary %}
-        <p class="story__summary">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+  <article grid-position="{{ gridPosition }}" class="story story--{{ layout }} story--{{ size }}">
+    {% if mediaRes %}
+      <img class="story__media" src="https://via.placeholder.com/{{ mediaRes }}" alt="">
+    {% endif %}
+    <header class="story__header">
+      <h1 class="story__heading type--{{ size }}">
+        {% if heading %}
+          {{ heading }}
+        {% else %}
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit
+        {% endif %}
+      </h1>
+      {% if summary %}
+        <p class="story__summary">{{ summary }}</p>
+      {% endif %}
+      {% if datestamp %}
+        <span class="story__datestamp">{{ datestamp }}</span>
       {% endif %}
     </header>
-    <footer>
-      {% if storySublinks %}
-        <ul>
+    {# <footer class="story__footer">
+      {# {% if sublinks %}
+        <ul class="story__sublinks">
           <li><a href="">Sublink</a></li>
           <li><a href="">Sublink</a></li>
           <li><a href="">Sublink</a></li>
         </ul>
-      {% endif %}
-      {% if storyDate %}
-        <span class="story__datestamp">Date</span>
-      {% endif %}
-    </footer>    
+      {% endif %} 
+
+    </footer>     #}
   </article>
 
 {% endmacro %}
