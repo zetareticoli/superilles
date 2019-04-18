@@ -1,9 +1,22 @@
-{% extends "layout.njk" %}
+{% extends "layout/base.njk" %}
+{% from "macro/story.njk" import story %}
 
 {% block content %}
 
-    {% include "partials/headlines.base.njk" %}
+<section class="g-section g-headlines g-headlines--preview">
+  {{ story("lead", "cover", "lg", "datestamp", "summary", "sublinks") }}
 
-    {# {% include "partials/list.data.njk" %} #}
+  {{ story("featured", "stack", "md", "datestamp", "summary") }}
+
+  {{ story("featured", "stack", "md", "datestamp", "summary") }}
+</section>
+
+<section class="g-section g-list">
+
+  {% for i in range(0,5) %}
+    {{ story("featured", "list", "md", "datestamp", "summary", "sublinks") }}
+  {% endfor %}
+
+</section>
 
 {% endblock %}
