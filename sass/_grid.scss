@@ -1,0 +1,30 @@
+.g-box {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.g-section {
+  display: grid;
+  grid-gap: $gap-sm;
+  justify-content: center;
+  transition: all .3s ease;
+
+  @media screen and (min-width: $bp-md) {
+    grid-template-columns: repeat(6, 114px);
+  }
+
+  @media screen and (min-width: $bp-lg) {
+    grid-gap: $gap-lg;
+    grid-template-columns: repeat(12, 76px);
+  }
+
+  @media screen and (min-width: $bp-xl) {
+    grid-template-columns: repeat(12, 96px);
+  }
+}
+
+.g-section+.g-section {
+  margin-top: $gap-lg;
+}
