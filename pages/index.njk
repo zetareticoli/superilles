@@ -3,30 +3,77 @@
 
 {% block content %}
 
-<section class="g-section g-featureds">
+  <section class="o-grid g-featureds">
 
-  {{ story("lead-spalla", "cover", "lg", false, articles[0].title, articles[0].summary) }}
-  {{ story("featured-top", "cover", "md", "1000x563", articles[10].title) }}
-  {{ story("featured-bottom", "stack", "sm", false, articles[2].title) }}
-  {{ story("featured-bottom", "stack", "sm", false, articles[3].title) }}
-  
-  {% set maxItems = 5 %}
-  {% for article in articles %}
-    {% if loop.index <= maxItems %}
-      {{ story("standfirst", "list", "md", "300x169", article.title, article.summary ) }}
+    <!-- Headlines -->
+    {% if headlinesLayoutMulti %}
+
+      {{ story("lead-spalla", "cover", "lg", false, articles[0].title, articles[0].summary) }}
+      {{ story("featured-top", "cover", "md", "600x338", articles[10].title) }}
+      {{ story("featured-bottom", "stack", "sm", false, articles[2].title) }}
+      {{ story("featured-bottom", "stack", "sm", false, articles[3].title) }}
+
+    {% else %}
+        
+      {{ story("lead", "list-reverse", "lg", "600x338", articles[0].title, articles[0].summary) }}
+
     {% endif %}
-  {% endfor %}
 
-  {# <div grid-position="column">
-    <h3>Ultim'ora</h3>
-    {% for i in range(0,5) %}
-      {{ story("standfirst", "list", "sm", false,"datestamp") }}
+    {% set maxItems = 6 %}
+    {% for article in articles %}
+      {% if loop.index <= maxItems %}
+        {{ story("standfirst", "stack", "md", "300x169", article.title ) }}
+      {% endif %}
     {% endfor %}
-  </div> #}
 
-  {# <div grid-position="slot-1" class="slot">
-    <img src='https://placehold.it/300x250/616161?text=Medium%20Box' alt=''/>
-  </div> #}
-</section>
+    <div grid-position="slot-1" class="slot">
+      <img src='https://placehold.it/300x250/616161?text=Medium%20Box' alt=''/>
+    </div>
+
+    {# <!-- Column -->
+    <aside grid-position="column">
+
+      {# <div>
+        <h3>Ultim'ora</h3>
+        {% for i in range(0,5) %}
+          {{ story("standfirst", "list", "sm", false) }}
+        {% endfor %}
+      </div>
+
+    </aside> #}
+
+  </section>
+  <!-- List -->
+
+  <section class="o-grid o-section">
+    <h3 class="o-section__title">Politica</h3>
+    {{ story("focus-lead", "cover", "lg", "600x338", articles[4].title) }}
+    {{ story("focus-featured", "cover", "md", "300x169", articles[5].title) }}
+    {{ story("focus-featured", "cover", "md", "300x169", articles[6].title) }}
+  </section>
+
+  <section class="o-grid o-section">
+    <h3 class="o-section__title">Sport</h3>
+    {{ story("focus-featured", "stack", "md", "300x169", articles[6].title) }}
+    {{ story("focus-featured", "stack", "md", "300x169", articles[6].title) }}
+    {{ story("focus-featured", "stack", "md", "300x169", articles[6].title) }}
+    {{ story("focus-featured", "stack", "md", "300x169", articles[6].title) }}
+  </section>
+
+  <section class="o-grid o-section">
+    <h3 class="o-section__title">Cronaca</h3>
+    {{ story("focus-lead-list", "cover", "lg", "1000x563", articles[7].title) }}
+    {{ story("focus-featured-list", "stack", "md", "300x169", articles[8].title) }}
+    {{ story("focus-featured-list", "stack", "md", "300x169", articles[9].title) }}
+  </section>
+
+  <section class="o-grid o-section">
+    <h3 class="o-section__title">Speciale Eventi</h3>
+    {{ story("focus-lead-square", "cover", "lg", "600x600", articles[13].title) }}
+    {{ story("focus-featured", "cover", "md", "300x169", articles[13].title, articles[13].summary) }}
+    {{ story("focus-featured", "cover", "md", "300x169", articles[13].title, articles[13].summary) }}
+    {{ story("focus-featured", "cover", "md", "300x169", articles[13].title, articles[13].summary) }}
+    {{ story("focus-featured", "cover", "md", "300x169", articles[13].title, articles[13].summary) }}
+  </section>
 
 {% endblock %}

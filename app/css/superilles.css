@@ -58,23 +58,22 @@ img {
   align-items: center;
   justify-content: center; }
 
-.g-section {
+.o-grid {
   display: grid;
   grid-gap: 12px;
-  justify-content: center;
   transition: all .3s ease; }
   @media screen and (min-width: 740px) {
-    .g-section {
+    .o-grid {
       grid-template-columns: repeat(6, 114px); } }
   @media screen and (min-width: 1200px) {
-    .g-section {
+    .o-grid {
       grid-gap: 24px;
       grid-template-columns: repeat(12, 76px); } }
   @media screen and (min-width: 1366px) {
-    .g-section {
+    .o-grid {
       grid-template-columns: repeat(12, 96px); } }
 
-.g-section + .g-section {
+.o-grid + .o-grid {
   margin-top: 24px; }
 
 .type--sm {
@@ -86,6 +85,10 @@ img {
 .type--lg {
   font-size: 250%; }
 
+.o-section__title {
+  font-size: 150%;
+  grid-column: span 12; }
+
 .g-featureds .story[grid-position="lead"] {
   grid-column: span 12; }
 
@@ -95,7 +98,7 @@ img {
   border-bottom: 1px solid #e0e0e0; }
 
 .g-featureds .story[grid-position="standfirst"] {
-  grid-column: span 12; }
+  grid-column: span 3; }
 
 .g-featureds .story[grid-position="featured"] {
   grid-column: span 4; }
@@ -110,19 +113,53 @@ img {
   grid-column: span 3;
   grid-row: 2; }
 
+.g-featureds [grid-position="slot-1"] {
+  grid-column: 7 / 10;
+  grid-row: 2; }
+
+[grid-position="focus-lead"] {
+  grid-column: span 6; }
+
+[grid-position="focus-lead-list"] {
+  grid-column: span 9;
+  grid-row: span 2; }
+
+[grid-position="focus-lead-square"] {
+  grid-column: span 6;
+  grid-row: span 2; }
+
+[grid-position="focus-featured"] {
+  grid-column: span 3; }
+
+[grid-position="focus-featured-list"] {
+  grid-column: span 3;
+  grid-row: span 1; }
+
 .story {
+  display: flex;
   margin-bottom: 1rem; }
+  .story--stack, .story--cover {
+    flex-flow: column; }
   .story--list {
-    display: flex;
     flex-wrap: wrap; }
+  .story--list-reverse {
+    flex-flow: row-reverse; }
   .story--list .story__header {
     flex: 1 1 75%; }
-  .story--list .story__media {
-    flex: 1 1 25%;
-    padding-right: 1rem; }
+  .story__media {
+    width: 100%; }
+    .story--list .story__media {
+      flex: 1 1 25%;
+      padding-right: 1rem; }
   .story--list .story__footer {
     flex: 1 1 auto; }
   .story__sublinks {
     margin: 0 0 1rem 0;
     padding: 0;
     list-style: none; }
+
+.slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0; }

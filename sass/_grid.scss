@@ -5,10 +5,9 @@
   justify-content: center;
 }
 
-.g-section {
+.o-grid {
   display: grid;
   grid-gap: $gap-sm;
-  justify-content: center;
   transition: all .3s ease;
 
   @media screen and (min-width: $bp-md) {
@@ -25,6 +24,6 @@
   }
 }
 
-.g-section+.g-section {
+.o-grid+.o-grid {
   margin-top: $gap-lg;
 }

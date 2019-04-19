@@ -11,7 +11,7 @@
   }
 
   .story[grid-position="standfirst"] {
-    grid-column: span 12;
+    grid-column: span 3;
   }
 
   .story[grid-position="featured"] {
@@ -27,6 +27,11 @@
 
   .story[grid-position="featured-bottom"] {
     grid-column: span 3;
+    grid-row: 2;
+  }
+
+  [grid-position="slot-1"] {
+    grid-column: 7 / 10;
     grid-row: 2;
   }
 }

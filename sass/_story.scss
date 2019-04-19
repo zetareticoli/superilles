@@ -1,9 +1,18 @@
 .story {
+  display: flex;
   margin-bottom: 1rem;
 
+  &--stack,
+  &--cover {
+    flex-flow: column;
+  }
+
   &--list {
-    display: flex;
     flex-wrap: wrap;
+  }
+
+  &--list-reverse {
+    flex-flow: row-reverse;
   }
 
   &__header {
@@ -13,6 +22,8 @@
   }
 
   &__media {
+    width: 100%;
+
     .story--list & {
       flex: 1 1 25%;
       padding-right: 1rem;
