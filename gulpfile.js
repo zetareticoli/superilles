@@ -45,7 +45,7 @@ gulp.task('nunj', function () {
   };
   return gulp.src(pages.source)
     .pipe(data(function () {
-      return require('./assets/data/top-headlines.json')
+      return require('./assets/data/articles.json')
     }))
     .pipe(nunj({
       path: ['templates']
