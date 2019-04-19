@@ -1,0 +1,48 @@
+.page {
+  height: 100%;
+  display: grid;
+  // padding: 12px;
+  grid-gap: $gap-sm;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: 80px 1fr 80px;
+  justify-items: center;
+
+  @media screen and (min-width: $bp-lg) {
+    grid-gap: $gap-lg;
+  }
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.main {
+  grid-area: content;
+  width: 100%;
+  position: relative;
+
+  @media screen and (min-width: $bp-xl) {
+    width: 1176px;
+  }
+
+  @media screen and (min-width: $bp-xxl) {
+    width: 1392px;
+  }
+}

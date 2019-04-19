@@ -28,9 +28,5 @@
   .story[grid-position="featured-bottom"] {
     grid-column: span 3;
     grid-row: 2;
-
-    &+& {
-      border-left: 1px solid $md-grey-300;
-    }
   }
 }
