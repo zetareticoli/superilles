@@ -6,20 +6,25 @@
 }
 
 .o-grid {
-  display: grid;
-  grid-gap: $gap-sm;
-  transition: all .3s ease;
 
   @media screen and (min-width: $bp-md) {
-    grid-template-columns: repeat(6, 114px);
+    display: grid;
+    justify-content: center;
+    grid-gap: $gap-sm;
+    transition: all .3s ease;
+    grid-template-columns: repeat(12, 51px);
   }
 
   @media screen and (min-width: $bp-lg) {
     grid-gap: $gap-lg;
-    grid-template-columns: repeat(12, 76px);
+    grid-template-columns: repeat(12, 68px);
   }
 
   @media screen and (min-width: $bp-xl) {
+    grid-template-columns: repeat(12, 76px);
+  }
+
+  @media screen and (min-width: $bp-xxl) {
     grid-template-columns: repeat(12, 96px);
   }
 }

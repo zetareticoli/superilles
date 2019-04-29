@@ -2,9 +2,12 @@
 
   <article grid-position="{{ gridPosition }}" class="story story--{{ layout }} story--{{ size }}">
     {% if mediaRes %}
-      <img class="story__media" src="https://via.placeholder.com/{{ mediaRes }}" alt="">
+      <figure class="story__media">
+        <img src="https://via.placeholder.com/{{ mediaRes }}" alt="">
+      </figure>
     {% endif %}
     <header class="story__header">
+    
       <h1 class="story__heading type--{{ size }}">
         {% if heading %}
           {{ heading }}
@@ -12,13 +15,17 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit
         {% endif %}
       </h1>
+
       {% if summary %}
         <p class="story__summary">{{ summary }}</p>
       {% endif %}
+
       {% if datestamp %}
         <span class="story__datestamp">{{ datestamp }}</span>
       {% endif %}
+
     </header>
+
     {# <footer class="story__footer">
       {# {% if sublinks %}
         <ul class="story__sublinks">

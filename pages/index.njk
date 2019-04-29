@@ -1,5 +1,6 @@
 {% extends "layout/base.njk" %}
 {% from "macro/story.njk" import story %}
+{% set headlinesLayoutMulti = false %}
 
 {% block content %}
 
@@ -30,21 +31,9 @@
       <img src='https://placehold.it/300x250/616161?text=Medium%20Box' alt=''/>
     </div>
 
-    {# <!-- Column -->
-    <aside grid-position="column">
-
-      {# <div>
-        <h3>Ultim'ora</h3>
-        {% for i in range(0,5) %}
-          {{ story("standfirst", "list", "sm", false) }}
-        {% endfor %}
-      </div>
-
-    </aside> #}
-
   </section>
-  <!-- List -->
 
+  <!-- Focus -->
   <section class="o-grid o-section">
     <h3 class="o-section__title">Politica</h3>
     {{ story("focus-lead", "cover", "lg", "600x338", articles[4].title) }}
@@ -52,6 +41,7 @@
     {{ story("focus-featured", "cover", "md", "300x169", articles[6].title) }}
   </section>
 
+  <!-- Focus -->
   <section class="o-grid o-section">
     <h3 class="o-section__title">Sport</h3>
     {{ story("focus-featured", "stack", "md", "300x169", articles[6].title) }}
@@ -60,6 +50,7 @@
     {{ story("focus-featured", "stack", "md", "300x169", articles[6].title) }}
   </section>
 
+  <!-- Focus -->
   <section class="o-grid o-section">
     <h3 class="o-section__title">Cronaca</h3>
     {{ story("focus-lead-list", "cover", "lg", "1000x563", articles[7].title) }}
@@ -67,6 +58,7 @@
     {{ story("focus-featured-list", "stack", "md", "300x169", articles[9].title) }}
   </section>
 
+  <!-- Focus -->
   <section class="o-grid o-section">
     <h3 class="o-section__title">Speciale Eventi</h3>
     {{ story("focus-lead-square", "cover", "lg", "600x600", articles[13].title) }}
