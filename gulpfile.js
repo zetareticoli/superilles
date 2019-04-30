@@ -4,6 +4,7 @@ var gulp = require('gulp');
 // Include Our Plugins
 var bs = require('browser-sync');
 var clean = require('gulp-clean');
+var data = require('gulp-data');
 var nunj = require('gulp-nunjucks-render');
 var sass = require('gulp-sass');
 var reload = bs.reload;
@@ -43,6 +44,9 @@ gulp.task('nunj', function () {
     "preserve_newlines": true,
   };
   return gulp.src(pages.source)
+    .pipe(data(function () {
+      return require('./assets/data/articles.json')
+    }))
     .pipe(nunj({
       path: ['templates']
     }))

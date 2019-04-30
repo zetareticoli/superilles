@@ -1,0 +1,22 @@
+[grid-position="focus-lead"] {
+  grid-column: span 6;
+}
+
+[grid-position="focus-lead-square"] {
+  grid-column: span 6;
+  grid-row: span 2;
+}
+
+[grid-position="focus-featured"] {
+  grid-column: span 3;
+}
+
+[grid-position="focus-lead-list"] {
+  grid-column: span 9;
+  grid-row: span 2;
+}
+
+[grid-position="focus-featured-list"] {
+  grid-column: span 3;
+  grid-row: span 1;
+}
