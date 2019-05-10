@@ -1,0 +1,46 @@
+.o-img {
+  width: 100%;
+}
+
+.o-section {
+  &__title {
+    font-size: 150%;
+    grid-column: span 12;
+  }
+}
+
+.o-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0e0e0;
+  padding: 1rem 0;
+
+}
+
+.o-type {
+  font-size: 250%;
+
+  @media screen and (min-width: $bp-md) {
+    &--xs {
+      font-size: 85%;
+    }
+
+    &--sm {
+      font-size: 110%;
+    }
+
+    &--md {
+      font-size: 150%;
+    }
+
+    &--lg {
+      font-size: 200%;
+    }
+
+    &--xl {
+      font-size: 250%;
+    }
+  }
+
+}

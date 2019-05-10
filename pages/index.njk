@@ -1,39 +1,31 @@
 {% extends "layout/base.njk" %}
 {% from "macro/story.njk" import story %}
-{% set headlinesLayoutMulti = false %}
 
 {% block content %}
 
-  <section class="o-grid g-featureds">
+  <section class="o-grid l-featureds">
 
-    <!-- Headlines -->
-    {% if headlinesLayoutMulti %}
+    {{ story(position='1', layout='stack-reverse', "xl", media="600x338", articles[0].title, articles[0].summary) }}
+    {{ story(position='2', layout='inset', "md", media='300x169',articles[10].title, articles[10].summary) }}
+    {{ story(position='3', layout='inset', "md", media='300x169', articles[2].title, articles[2].summary) }}
+    {{ story(position='4', layout='stack', "sm", media='300x169', articles[3].title, articles[3].summary) }}
+    {{ story(position='5', layout='stack', "sm",  media='300x169', articles[4].title, articles[4].summary) }}
+    {{ story(position='6', layout='stack', "sm", media='300x169', articles[5].title) }}
+    {{ story(position='7', layout='stack', "sm", media='300x169', articles[6].title) }}
+    {{ story(position='8', layout='stack', "sm", media='300x169', articles[7].title) }}
+    {{ story(position='9', layout='stack', "sm", media='300x169', articles[8].title) }}
 
-      {{ story("lead-spalla", "cover", "lg", false, articles[0].title, articles[0].summary) }}
-      {{ story("featured-top", "cover", "md", "600x338", articles[10].title) }}
-      {{ story("featured-bottom", "stack", "sm", false, articles[2].title) }}
-      {{ story("featured-bottom", "stack", "sm", false, articles[3].title) }}
-
-    {% else %}
-        
-      {{ story("lead", "list-reverse", "lg", "600x338", articles[0].title, articles[0].summary) }}
-
-    {% endif %}
-
-    {% set maxItems = 6 %}
-    {% for article in articles %}
-      {% if loop.index <= maxItems %}
-        {{ story("standfirst", "stack", "md", "300x169", article.title ) }}
-      {% endif %}
-    {% endfor %}
-
-    <div grid-position="slot-1" class="slot">
+    <div grid-position="slot-medium-1" class="o-slot">
       <img src='https://placehold.it/300x250/616161?text=Medium%20Box' alt=''/>
+    </div>
+
+    <div grid-position="slot-large-1" class="o-slot">
+      <img src='https://placehold.it/1156x250/616161?text=Large%20Rectangle' alt=''/>
     </div>
 
   </section>
 
-  <!-- Focus -->
+  {# <!-- Focus -->
   <section class="o-grid o-section">
     <h3 class="o-section__title">Politica</h3>
     {{ story("focus-lead", "cover", "lg", "600x338", articles[4].title) }}
@@ -66,6 +58,6 @@
     {{ story("focus-featured", "cover", "md", "300x169", articles[13].title, articles[13].summary) }}
     {{ story("focus-featured", "cover", "md", "300x169", articles[13].title, articles[13].summary) }}
     {{ story("focus-featured", "cover", "md", "300x169", articles[13].title, articles[13].summary) }}
-  </section>
+  </section> #}
 
 {% endblock %}

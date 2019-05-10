@@ -1,0 +1,141 @@
+// Story Layouts - Scoped variables
+// Use inside this file for parent-child Sass declarations
+$layout-cover: '.c-story--cover';
+$layout-stack: '.c-story--stack';
+$layout-stack-reverse: '.c-story--stack-reverse';
+$layout-list: '.c-story--list';
+$layout-list-reverse: '.c-story--list-reverse';
+$layout-inset: '.c-story--inset';
+
+// Story
+// 1. Set verticale alignment to start preventing extra space between story elements with CSS Grid 
+.c-story {
+  display: flex;
+  align-content: start; // 1
+
+  &--stack,
+  &--stack-reverse,
+  &--cover {
+    flex-flow: column;
+  }
+
+  &--cover {
+    position: relative;
+  }
+
+  &--inset {
+    flex-flow: row;
+    flex-wrap: wrap;
+  }
+
+  &--list,
+  &--list-reverse {
+    flex-flow: column;
+    align-items: flex-start;
+  }
+
+  &--list {
+    @include bp(md) {
+      flex-flow: row;
+    }
+  }
+
+  &--list-reverse {
+    @include bp(md) {
+      flex-flow: row-reverse;
+    }
+  }
+
+  &__heading {
+    margin-top: 0;
+    margin-bottom: $gap-sm;
+
+    #{$layout-inset} & {
+      order: 1;
+    }
+
+    #{$layout-stack-reverse} {
+      order: 1;
+    }
+  }
+
+  &__media {
+    flex-shrink: 0;
+
+    #{$layout-cover} &,
+    #{$layout-stack} & {
+      margin-bottom: $gap-sm;
+    }
+
+    #{$layout-cover} & {
+      height: 100%;
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      background-position: center center;
+    }
+
+    #{$layout-list} & {
+      width: 50%;
+      padding-right: 1rem;
+    }
+
+    #{$layout-list-reverse} & {
+      padding-left: $gap-sm;
+      width: 33%;
+    }
+
+    #{$layout-inset} & {
+      order: 3;
+      flex-basis: calc(50% - #{$gap-sm});
+      margin-left: $gap-sm;
+    }
+
+    #{$layout-inset}.c-story--sm & {
+      flex-basis: calc(33% - #{$gap-sm});
+    }
+
+    #{$layout-stack-reverse} & {
+      order: 2;
+      margin-bottom: $gap-sm;
+    }
+  }
+
+  &__footer {
+    #{$layout-list} & {
+      flex-grow: 1;
+    }
+  }
+
+  &__summary {
+    margin-top: 0;
+
+    #{$layout-inset} & {
+      order: 2;
+      flex-basis: 50%;
+      margin-bottom: 0;
+    }
+
+    #{$layout-inset}.c-story--sm & {
+      flex-basis: 66%;
+    }
+
+    #{$layout-stack-reverse} & {
+      order: 3;
+    }
+
+    .c-story--xl & {
+      font-size: 20px;
+    }
+
+  }
+
+  &__sublinks {
+    margin: 0 0 1rem 0;
+    padding: 0;
+    list-style: none;
+  }
+}

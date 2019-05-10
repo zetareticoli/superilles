@@ -1,10 +1,5 @@
-.g-box {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+// Grid Templates
+//
 .o-grid {
 
   @media screen and (min-width: $bp-md) {
@@ -16,19 +11,20 @@
   }
 
   @media screen and (min-width: $bp-lg) {
-    grid-gap: $gap-lg;
-    grid-template-columns: repeat(12, 68px);
+    grid-template-columns: repeat(12, 70px);
   }
 
   @media screen and (min-width: $bp-xl) {
-    grid-template-columns: repeat(12, 76px);
+    grid-gap: $gap-lg;
+    grid-template-columns: repeat(12, 74px);
   }
 
   @media screen and (min-width: $bp-xxl) {
-    grid-template-columns: repeat(12, 96px);
+    grid-template-columns: repeat(12, 94px);
   }
 }
 
+// TODO: Remove before production, grid sections should be spaced in different ways
 .o-grid+.o-grid {
   margin-top: $gap-lg;
 }

@@ -1,4 +1,4 @@
-.page {
+.c-page {
   height: 100%;
   display: grid;
   grid-gap: $gap-sm;
@@ -14,7 +14,7 @@
   }
 }
 
-.header {
+.c-header {
   grid-area: header;
   display: flex;
   align-items: center;
@@ -23,7 +23,7 @@
   background-color: lightgray;
 }
 
-.footer {
+.c-footer {
   grid-area: footer;
   display: flex;
   align-items: center;
@@ -32,16 +32,22 @@
   background-color: lightgray;
 }
 
-.main {
+.c-main {
   grid-area: content;
   width: 100%;
   position: relative;
+  padding: $gap-sm;
+
+  @include bp(lg) {
+    width: 996px;
+  }
 
   @media screen and (min-width: $bp-xl) {
-    width: 1176px;
+    width: 1200px;
+    padding: $gap-lg;
   }
 
   @media screen and (min-width: $bp-xxl) {
-    width: 1392px;
+    width: 1440px;
   }
 }

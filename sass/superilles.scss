@@ -1,52 +1,23 @@
-@import "../node_modules/material-colors/dist/colors.scss";
-
 // Settings -------------------------------//
 //
 @import 'settings';
 
 
+// Tools -------------------------------//
+//
+@import "../node_modules/material-colors/dist/colors.scss";
+@import "../node_modules/gdl-sass-tools/tools.scss";
+@import "../node_modules/gdl-sass-tools/utilities.scss";
+
+
 // Scaffold -------------------------------//
 //
-@import 'scaffold';
+@import 'elements';
 
+@import 'objects';
+@import 'objects.grid';
 
-// Page -----------------------------------//
-//
-@import 'page';
+@import 'layouts.featureds';
 
-
-// Grid Globals ---------------------------//
-//
-@import 'grid';
-
-
-// Typography -----------------------------//
-//
-@import 'typography';
-
-
-// Section --------------------------------//
-//
-@import 'section';
-
-
-// Featureds ------------------------------//
-//
-@import 'featureds';
-
-
-// Focus ----------------------------------//
-//
-@import 'focus';
-
-
-// Story ----------------------------------//
-//
-@import 'story';
-
-.slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #e0e0e0;
-}
+@import 'components';
+@import 'components.story';

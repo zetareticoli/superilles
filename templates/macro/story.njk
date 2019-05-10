@@ -1,41 +1,30 @@
-{% macro story(gridPosition, layout, size, mediaRes, heading, summary, datestamp) %}
+{% macro story(position='', layout='', size, media='', heading, summary, datestamp) %}
 
-  <article grid-position="{{ gridPosition }}" class="story story--{{ layout }} story--{{ size }}">
-    {% if mediaRes %}
-      <figure class="story__media">
-        <img src="https://via.placeholder.com/{{ mediaRes }}" alt="">
-      </figure>
-    {% endif %}
-    <header class="story__header">
+  <article grid-position="{{ position }}" class="c-story c-story--{{ layout }} c-story--{{ size }}">
+
+    {% if media %}
+      {% if layout == 'cover' %}
+        <figure class="c-story__media" style="background-image: url('https://via.placeholder.com/{{ media }}')"></figure>
     
-      <h1 class="story__heading type--{{ size }}">
-        {% if heading %}
-          {{ heading }}
-        {% else %}
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit
-        {% endif %}
-      </h1>
-
-      {% if summary %}
-        <p class="story__summary">{{ summary }}</p>
+      {% else %}
+        <figure class="c-story__media">
+          <img class="o-img" src="https://via.placeholder.com/{{ media }}" alt="">        
+        </figure>
       {% endif %}
+    {% endif %}
 
-      {% if datestamp %}
-        <span class="story__datestamp">{{ datestamp }}</span>
-      {% endif %}
+    <h1 class="c-story__heading o-type o-type--{{ size }}">
+      {{ heading }}
+    </h1>
 
-    </header>
+    {% if summary %}
+      <p class="c-story__summary">{{ summary }}</p>
+    {% endif %}
 
-    {# <footer class="story__footer">
-      {# {% if sublinks %}
-        <ul class="story__sublinks">
-          <li><a href="">Sublink</a></li>
-          <li><a href="">Sublink</a></li>
-          <li><a href="">Sublink</a></li>
-        </ul>
-      {% endif %} 
+    {% if datestamp %}
+      <span class="c-story__datestamp">{{ datestamp }}</span>
+    {% endif %}
 
-    </footer>     #}
   </article>
 
 {% endmacro %}
