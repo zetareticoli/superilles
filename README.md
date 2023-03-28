@@ -5,7 +5,7 @@
 Superilles is a grid system specifically designed for editorial websites (newspapers, media, magazines, etc). It uses CSS Grid Layout Module.
 
 ## Why Superilles
-Grid design is heavily inspired by Barcelona's _superilles_. A _superilla_ (superblock in english) is a model of mobility that restructures the typical urban road network. Superblocks are made up of a grid of basic roads forming a polygon, some 400 by 400 meters, with both interior and exterior components. I love Barcelona so I decide to apply this concept to grid design for the web.
+Grid design is heavily inspired by Barcelona's superilles. A superilla is a model of mobility that restructures the typical urban road network. Superblocks are made up of a grid of basic roads forming a polygon, about 400 meters by 400 meters, with both interior and exterior components. I was so inspired by Barcelona that I decided to apply this concept to web grid design.
 
 ## The Grid
 The grid is composed of a predetermined number of superblocks. The size of each superblock is predetermined and changes according to the viewport. So we would have superblocks of different sizes based on the devices used. 
